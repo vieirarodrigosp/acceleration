@@ -27,12 +27,12 @@ public class AccelerationController {
 		return accelerationBO.save(acceleration);
 	}
 	@ApiOperation(value="This service seeks to acceleration by id.")
-	@GetMapping(path = "/v1/accelerations/{id}")
+	@GetMapping(path = "/v1/accelerations/id/{id}")
 	public @ResponseBody Optional<AccelerationVO> findById(@PathVariable int id) {
 		return accelerationBO.findById(id);
 	}
 	@ApiOperation(value="This service seeks to acceleration by name.")
-	@GetMapping(path = "/v1/accelerations/{name}")
+	@GetMapping(path = "/v1/accelerations/name/{name}")
 	public @ResponseBody Optional<AccelerationVO> findByName(@PathVariable String name) {
 		return accelerationBO.findByName(name);
 	}

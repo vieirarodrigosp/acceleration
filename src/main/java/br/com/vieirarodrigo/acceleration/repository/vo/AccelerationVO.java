@@ -1,5 +1,6 @@
 package br.com.vieirarodrigo.acceleration.repository.vo;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -20,14 +21,15 @@ import lombok.Setter;
 @AllArgsConstructor
 @Entity
 @Table(name = "ACCELERATION")
-public class AccelerationVO {
+public class AccelerationVO implements Serializable {
+	public static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	private int id;
-	private String name;
-	private String slug;
+	public int id;
+	public String name;
+	public String slug;
 	@Column(name = "CHALLENGE_ID")
-	private int challengeId;
+	public int challengeId;
 	@Column(name = "CREATED_AT")
-	private Date created;
+	public Date created;
 }
